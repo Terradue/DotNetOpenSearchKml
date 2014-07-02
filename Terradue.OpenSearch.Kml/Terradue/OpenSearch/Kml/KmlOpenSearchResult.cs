@@ -31,6 +31,12 @@ namespace Terradue.OpenSearch.Kml {
 
         #region IOpenSearchResultCollection implementation
 
+        public string Id {
+            get {
+                throw new NotImplementedException();
+            }
+        }
+
         public void SerializeToStream(System.IO.Stream stream) {
             throw new NotImplementedException();
         }
