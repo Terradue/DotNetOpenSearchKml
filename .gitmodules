@@ -1,6 +1,6 @@
-[submodule "DotNetOpenSearch"]
-	path = DotNetOpenSearch
+[submodule "Terradue.OpenSearch"]
+	path = Terradue.OpenSearch
 	url = git@github.com:Terradue/DotNetOpenSearch.git
 [submodule "DotNetSyndication"]
-	path = DotNetSyndication
+	path = Terradue.ServiceModel.Syndication
 	url = git@github.com:Terradue/DotNetSyndication.git
