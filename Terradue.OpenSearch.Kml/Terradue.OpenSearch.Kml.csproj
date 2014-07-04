@@ -53,6 +53,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Terradue.OpenSearch.Kml.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Terradue\" />
@@ -62,11 +63,11 @@
     <Folder Include="Terradue\OpenSearch\Kml\Extensions\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
-      <Project>{EA911C65-7F54-4909-97AB-AF66C8069D3A}</Project>
+    <ProjectReference Include="..\DotNetOpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
+      <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
       <Name>Terradue.OpenSearch</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Terradue.ServiceModel.Syndication\Terradue.ServiceModel.Syndication.csproj">
+    <ProjectReference Include="..\DotNetSyndication\Terradue.ServiceModel.Syndication\Terradue.ServiceModel.Syndication.csproj">
       <Project>{729A82DF-D3CE-4A1A-BA83-0508F0362DB5}</Project>
       <Name>Terradue.ServiceModel.Syndication</Name>
     </ProjectReference>

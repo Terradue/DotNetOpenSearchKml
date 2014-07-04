@@ -1,0 +1,6 @@
+[submodule "DotNetOpenSearch"]
+	path = DotNetOpenSearch
+	url = git@github.com:Terradue/DotNetOpenSearch.git
+[submodule "DotNetSyndication"]
+	path = DotNetSyndication
+	url = git@github.com:Terradue/DotNetSyndication.git
