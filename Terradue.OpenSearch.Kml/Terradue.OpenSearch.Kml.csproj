@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="RestorePackages;Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -20,6 +20,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="nuget restore -SolutionDirectory ${ProjectDir}/.. -PackagesDirectory ${ProjectDir}/../packages" workingdir="" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -28,6 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="nuget restore -SolutionDirectory ${ProjectDir}/.. -PackagesDirectory ${ProjectDir}/../packages" workingdir="" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,6 +53,9 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Terradue.ServiceModel.Syndication">
+      <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,15 +75,11 @@
     <Folder Include="Terradue\OpenSearch\Kml\Result\" />
     <Folder Include="Terradue\OpenSearch\Kml\Extensions\" />
   </ItemGroup>
+  <Import Project="$(ProjectDir)\..\.nuget\NuGet.targets" Condition="Exists('$(ProjectDir)\..\.nuget\NuGet.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\DotNetOpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
+    <ProjectReference Include="..\Terradue.OpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
       <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
       <Name>Terradue.OpenSearch</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DotNetSyndication\Terradue.ServiceModel.Syndication\Terradue.ServiceModel.Syndication.csproj">
-      <Project>{729A82DF-D3CE-4A1A-BA83-0508F0362DB5}</Project>
-      <Name>Terradue.ServiceModel.Syndication</Name>
-    </ProjectReference>
   </ItemGroup>
-  <Import Project="$(ProjectDir)\..\.nuget\NuGet.targets" Condition="Exists('$(ProjectDir)\..\.nuget\NuGet.targets')" />
 </Project>
