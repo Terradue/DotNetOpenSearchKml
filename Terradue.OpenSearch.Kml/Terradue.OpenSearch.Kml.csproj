@@ -72,4 +72,5 @@
       <Name>Terradue.ServiceModel.Syndication</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(ProjectDir)\..\.nuget\NuGet.targets" Condition="Exists('$(ProjectDir)\..\.nuget\NuGet.targets')" />
 </Project>
