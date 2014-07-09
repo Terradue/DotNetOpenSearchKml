@@ -75,9 +75,9 @@
     <Folder Include="Terradue\OpenSearch\Kml\Result\" />
     <Folder Include="Terradue\OpenSearch\Kml\Extensions\" />
   </ItemGroup>
-  <Import Project="$(ProjectDir)\..\.nuget\NuGet.targets" Condition="Exists('$(ProjectDir)\..\.nuget\NuGet.targets')" />
+  <Import Project="$(MSBuildProjectDirectory)\..\.nuget\NuGet.targets" Condition="Exists('$(MSBuildProjectDirectory)\..\.nuget\NuGet.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\Terradue.OpenSearch\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
+    <ProjectReference Include="..\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
       <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
       <Name>Terradue.OpenSearch</Name>
     </ProjectReference>
