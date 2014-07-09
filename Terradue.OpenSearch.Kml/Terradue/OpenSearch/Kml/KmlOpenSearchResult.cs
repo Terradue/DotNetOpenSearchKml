@@ -104,7 +104,7 @@ namespace Terradue.OpenSearch.Kml {
 
         #endregion
 
-        public static KmlOpenSearchResult CreateFromOpenSearchResultCollection(AtomFeed feed) {
+        public static KmlOpenSearchResult CreateFromOpenSearchResultCollection(IOpenSearchResultCollection feed) {
             throw new NotImplementedException();
         }
     }
