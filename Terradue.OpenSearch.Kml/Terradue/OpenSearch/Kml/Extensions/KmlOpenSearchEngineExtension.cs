@@ -81,10 +81,6 @@ namespace Terradue.OpenSearch.Kml.Extensions {
             }
         }
 
-        public override SyndicationLink[] GetEnclosures(IOpenSearchResult result) {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         public override IOpenSearchResultCollection CreateOpenSearchResultFromOpenSearchResult(IOpenSearchResultCollection results) {
