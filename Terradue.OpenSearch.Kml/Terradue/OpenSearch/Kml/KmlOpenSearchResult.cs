@@ -102,6 +102,20 @@ namespace Terradue.OpenSearch.Kml {
             }
         }
 
+        readonly System.Collections.ObjectModel.Collection<SyndicationCategory> categories;
+        public System.Collections.ObjectModel.Collection<SyndicationCategory> Categories {
+            get {
+                return categories;
+            }
+        }
+
+        readonly System.Collections.ObjectModel.Collection<SyndicationPerson> authors;
+        public System.Collections.ObjectModel.Collection<SyndicationPerson> Authors {
+            get {
+                return authors;
+            }
+        }
+
         #endregion
 
         public static KmlOpenSearchResult CreateFromOpenSearchResultCollection(IOpenSearchResultCollection feed) {
