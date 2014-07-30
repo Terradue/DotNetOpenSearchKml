@@ -52,6 +52,7 @@ namespace Terradue.OpenSearch.Kml.Result {
             get {
                 throw new NotImplementedException();
             }
+            set{ }
         }
 
         public void SerializeToStream(System.IO.Stream stream) {
