@@ -50,6 +50,9 @@ namespace Terradue.OpenSearch.Kml {
             get {
                 throw new NotImplementedException();
             }
+            set {
+                throw new NotImplementedException();
+            }
         }
 
         public System.Collections.ObjectModel.Collection<SyndicationLink> Links {
@@ -68,6 +71,7 @@ namespace Terradue.OpenSearch.Kml {
             get {
                 throw new NotImplementedException();
             }
+            set { }
         }
 
         public DateTime Date {

@@ -67,6 +67,9 @@ namespace Terradue.OpenSearch.Kml.Result {
             get {
                 throw new NotImplementedException();
             }
+            set {
+                throw new NotImplementedException();
+            }
         }
 
         public System.Collections.ObjectModel.Collection<SyndicationLink> Links {
@@ -84,6 +87,8 @@ namespace Terradue.OpenSearch.Kml.Result {
         public string Title {
             get {
                 throw new NotImplementedException();
+            }
+            set{
             }
         }
 

@@ -13,6 +13,7 @@ using Terradue.OpenSearch.Kml;
 using SharpKml.Dom;
 using SharpKml.Base;
 using Terradue.OpenSearch.Kml.Result;
+using Terradue.OpenSearch.Request;
 
 namespace Terradue.OpenSearch.Kml.Extensions {
     public enum COORDINATE {
@@ -67,7 +68,7 @@ namespace Terradue.OpenSearch.Kml.Extensions {
             throw new NotSupportedException("Kml extension does not transform OpenSearch response from " + response.ContentType);
         }
 
-        public void ApplyResultFilters(OpenSearchEngine ose, IOpenSearchResult osr) {
+        public void ApplyResultFilters(OpenSearchEngine ose, OpenSearchRequest request, IOpenSearchResultCollection osr) {
 
         }
 
