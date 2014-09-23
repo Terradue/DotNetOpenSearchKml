@@ -96,11 +96,15 @@ namespace Terradue.OpenSearch.Kml.Result {
             get {
                 throw new NotImplementedException();
             }
+            set {
+            }
         }
 
         public string Identifier {
             get {
                 throw new NotImplementedException();
+            }
+            set {
             }
         }
 
@@ -136,6 +140,12 @@ namespace Terradue.OpenSearch.Kml.Result {
         public System.Collections.ObjectModel.Collection<SyndicationPerson> Authors {
             get {
                 return authors;
+            }
+        }
+
+        public long TotalResults {
+            get {
+                throw new NotImplementedException();
             }
         }
 
