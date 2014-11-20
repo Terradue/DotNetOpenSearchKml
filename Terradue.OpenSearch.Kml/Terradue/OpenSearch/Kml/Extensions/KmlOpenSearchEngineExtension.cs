@@ -14,6 +14,10 @@ using SharpKml.Dom;
 using SharpKml.Base;
 using Terradue.OpenSearch.Kml.Result;
 using Terradue.OpenSearch.Request;
+using Mono.Addins;
+
+[assembly:Addin]
+[assembly:AddinDependency ("OpenSearchEngine", "1.0")]
 
 namespace Terradue.OpenSearch.Kml.Extensions {
     public enum COORDINATE {
@@ -43,6 +47,9 @@ namespace Terradue.OpenSearch.Kml.Extensions {
         THREE}
     ;
 
+
+    [Extension(typeof(IOpenSearchEngineExtension))]
+    [ExtensionNode("GeoJson", "GeoJson native query")]
     public class KMLAssemblyOpenSearchEngineExtension : OpenSearchEngineExtension<KmlOpenSearchResult> {
 
         // default constructor method
