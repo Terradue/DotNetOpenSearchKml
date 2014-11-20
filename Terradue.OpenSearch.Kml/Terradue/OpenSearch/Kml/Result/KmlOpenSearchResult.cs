@@ -69,71 +69,27 @@ namespace Terradue.OpenSearch.Kml.Result {
             return serializer.Xml;
         }
 
-        public System.Collections.Generic.IEnumerable<IOpenSearchResultItem> Items {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public System.Collections.Generic.IEnumerable<IOpenSearchResultItem> Items { get; set; }
 
-        public System.Collections.ObjectModel.Collection<SyndicationLink> Links {
-            get {
-                throw new NotImplementedException();
-            }
-        }
+        public System.Collections.ObjectModel.Collection<SyndicationLink> Links { get; protected set; }
 
-        public SyndicationElementExtensionCollection ElementExtensions {
-            get {
-                throw new NotImplementedException();
-            }
-        }
+        public SyndicationElementExtensionCollection ElementExtensions { get; protected set; }
 
-        public string Title {
-            get {
-                throw new NotImplementedException();
-            }
-            set{
-            }
-        }
+        public string Title { get; set; }
 
-        public DateTime Date {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-            }
-        }
+        public DateTime Date { get; protected set; }
 
-        public string Identifier {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-            }
-        }
+        public string Identifier { get; set; }
 
-        public long Count {
-            get {
-                throw new NotImplementedException();
-            }
-        }
+        public long Count { get; protected set; }
 
         public string ContentType {
             get {
-                throw new NotImplementedException();
+                return KMLAssemblyOpenSearchEngineExtension.KmlMimeType;
             }
         }
 
-        public bool ShowNamespaces {
-            get {
-                throw new NotImplementedException();
-            }
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public bool ShowNamespaces { get; set; }
 
         readonly System.Collections.ObjectModel.Collection<SyndicationCategory> categories;
         public System.Collections.ObjectModel.Collection<SyndicationCategory> Categories {
@@ -149,11 +105,7 @@ namespace Terradue.OpenSearch.Kml.Result {
             }
         }
 
-        public long TotalResults {
-            get {
-                throw new NotImplementedException();
-            }
-        }
+        public long TotalResults { get; protected set; }
 
         #endregion
 
@@ -256,13 +208,11 @@ namespace Terradue.OpenSearch.Kml.Result {
             polygonStyle.ColorMode = ColorMode.Normal;
             polygonStyle.Color = Color32.Parse("440000ff");
 
-
-            Style style = new Style();
-            style.Polygon = polygonStyle;
-            style.Line = line;
-
-
             foreach (IOpenSearchResultItem item in results.Items) {
+
+                Style style = new Style();
+                style.Polygon = polygonStyle;
+                style.Line = line;
 
                 EarthObservation earthObservation = GetEarthObservation(item);
 
@@ -626,6 +576,15 @@ namespace Terradue.OpenSearch.Kml.Result {
             }
 
             KmlOpenSearchResult kmlResult = new KmlOpenSearchResult();
+            kmlResult.Items = results.Items;
+            kmlResult.Links = results.Links;
+            kmlResult.ElementExtensions = results.ElementExtensions;
+            kmlResult.Title = results.Title;
+            kmlResult.Date = results.Date;
+            kmlResult.Identifier = results.Identifier;
+            kmlResult.Count = results.Count;
+            kmlResult.ShowNamespaces = results.ShowNamespaces;
+
             kmlResult.Kml.Feature = doc;
 
             return kmlResult;

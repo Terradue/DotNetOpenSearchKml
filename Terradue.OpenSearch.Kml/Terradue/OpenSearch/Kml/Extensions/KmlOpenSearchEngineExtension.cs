@@ -52,6 +52,8 @@ namespace Terradue.OpenSearch.Kml.Extensions {
     [ExtensionNode("GeoJson", "GeoJson native query")]
     public class KMLAssemblyOpenSearchEngineExtension : OpenSearchEngineExtension<KmlOpenSearchResult> {
 
+        public const string KmlMimeType = "application/vnd.google-earth.kml+xml";
+                                          
         // default constructor method
         public KMLAssemblyOpenSearchEngineExtension() {
         }
@@ -85,7 +87,7 @@ namespace Terradue.OpenSearch.Kml.Extensions {
 
         public override string DiscoveryContentType {
             get {
-                return "application/vnd.google-earth.kml+xml";
+                return KmlMimeType;
             }
         }
 
