@@ -56,11 +56,17 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         public void SerializeToStream(System.IO.Stream stream) {
-            throw new NotImplementedException();
+            Serializer serializer = new Serializer();
+            serializer.Serialize(kml);
+            UTF8Encoding encoding = new UTF8Encoding();
+            byte[] result = encoding.GetBytes(serializer.Xml);
+            stream.Write(result, 0, result.Length);
         }
 
         public string SerializeToString() {
-            throw new NotImplementedException();
+            Serializer serializer = new Serializer();
+            serializer.Serialize(kml);
+            return serializer.Xml;
         }
 
         public System.Collections.Generic.IEnumerable<IOpenSearchResultItem> Items {
