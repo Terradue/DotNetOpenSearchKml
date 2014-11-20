@@ -41,9 +41,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="SharpKml">
-      <HintPath>..\packages\SharpKml.Core.2.0.1\lib\portable-net4+sl5+wp8+win8\SharpKml.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Ionic.Zip.Reduced">
       <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
@@ -55,6 +52,12 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="Terradue.ServiceModel.Syndication">
       <HintPath>..\packages\Terradue.ServiceModel.Syndication.1.0.0.0\lib\net40\Terradue.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="Terradue.OpenSearch">
+      <HintPath>..\packages\Terradue.OpenSearch.1.7.7\lib\net40\Terradue.OpenSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpKml">
+      <HintPath>..\packages\SharpKml.Core.2.0.3\lib\portable-net4+sl5+wp8+win8\SharpKml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,10 +79,4 @@
     <Folder Include="Terradue\OpenSearch\Kml\Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildProjectDirectory)\..\.nuget\NuGet.targets" Condition="Exists('$(MSBuildProjectDirectory)\..\.nuget\NuGet.targets')" />
-  <ItemGroup>
-    <ProjectReference Include="..\Terradue.OpenSearch\Terradue.OpenSearch.csproj">
-      <Project>{997A44FD-EE4A-490A-855B-88305E0CD269}</Project>
-      <Name>Terradue.OpenSearch</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
