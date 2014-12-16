@@ -30,6 +30,7 @@ using System.Text;
 using Terradue.OpenSearch.Kml.Extensions;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Terradue.OpenSearch.Kml.Result {
     public class KmlOpenSearchResult : IOpenSearchResultCollection {
@@ -71,13 +72,13 @@ namespace Terradue.OpenSearch.Kml.Result {
 
         public System.Collections.Generic.IEnumerable<IOpenSearchResultItem> Items { get; set; }
 
-        public System.Collections.ObjectModel.Collection<SyndicationLink> Links { get; protected set; }
+        public System.Collections.ObjectModel.Collection<SyndicationLink> Links { get; set; }
 
-        public SyndicationElementExtensionCollection ElementExtensions { get; protected set; }
+        public SyndicationElementExtensionCollection ElementExtensions { get; set; }
 
-        public string Title { get; set; }
+        public TextSyndicationContent Title { get; set; }
 
-        public DateTime Date { get; protected set; }
+        public DateTime Date { get; set; }
 
         public string Identifier { get; set; }
 
@@ -106,6 +107,19 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         public long TotalResults { get; protected set; }
+
+        readonly System.Collections.ObjectModel.Collection<SyndicationPerson> contributors;
+        public Collection<SyndicationPerson> Contributors {
+            get { return contributors; }
+        }
+
+        public TextSyndicationContent Copyright { get; set; }
+
+        public TextSyndicationContent Description {
+            get; set; 
+        }
+
+        public string Generator { get; set; }
 
         #endregion
 
