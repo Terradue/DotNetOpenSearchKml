@@ -73,7 +73,7 @@ namespace Terradue.OpenSearch.Kml.Extensions {
             }
         }
 
-        public override IOpenSearchResultCollection ReadNative(OpenSearchResponse response) {
+        public override IOpenSearchResultCollection ReadNative(IOpenSearchResponse response) {
             throw new NotSupportedException("Kml extension does not transform OpenSearch response from " + response.ContentType);
         }
 
@@ -81,7 +81,7 @@ namespace Terradue.OpenSearch.Kml.Extensions {
 
         }
 
-        public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(OpenSearchResponse response) {
+        public override OpenSearchUrl FindOpenSearchDescriptionUrlFromResponse(IOpenSearchResponse response) {
             throw new NotImplementedException();
         }
 

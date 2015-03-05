@@ -45,9 +45,6 @@
     <Reference Include="Ionic.Zip.Reduced">
       <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
-    <Reference Include="SharpKml.Kmz">
-      <HintPath>..\packages\SharpKml.Kmz.2.0.0\lib\net40\SharpKml.Kmz.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="Terradue.ServiceModel.Syndication">
@@ -56,11 +53,14 @@
     <Reference Include="SharpKml">
       <HintPath>..\packages\SharpKml.Core.2.0.3\lib\portable-net4+sl5+wp8+win8\SharpKml.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Addins">
-      <HintPath>..\packages\Mono.Addins.1.1\lib\Mono.Addins.dll</HintPath>
-    </Reference>
     <Reference Include="Terradue.OpenSearch">
-      <HintPath>..\packages\Terradue.OpenSearch.1.8.4\lib\net40\Terradue.OpenSearch.dll</HintPath>
+      <HintPath>..\packages\Terradue.OpenSearch.1.9.4\lib\net40\Terradue.OpenSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpKml.Kmz">
+      <HintPath>..\packages\SharpKml.Kmz.2.0.2\lib\net40\SharpKml.Kmz.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
