@@ -20,37 +20,10 @@ using Mono.Addins;
 [assembly:AddinDependency ("OpenSearchEngine", "1.0")]
 
 namespace Terradue.OpenSearch.Kml.Extensions {
-    public enum COORDINATE {
-        LATLONG,
-        LONGLAT}
-    ;
-
-    public enum EGEOMETRYTYPE {
-        NONE,
-        Curve,
-        Grid,
-        LinearRing,
-        LineString,
-        MultiCurve,
-        MultiGeometry,
-        MultiPoint,
-        MultiSolid,
-        MultiSurface,
-        Point,
-        Polygon,
-        RectifiedGrid,
-        Surface}
-    ;
-
-    public enum EDIMENSION {
-        TWO,
-        THREE}
-    ;
-
 
     [Extension(typeof(IOpenSearchEngineExtension))]
     [ExtensionNode("GeoJson", "GeoJson native query")]
-    public class KMLAssemblyOpenSearchEngineExtension : OpenSearchEngineExtension<KmlOpenSearchResult> {
+    public class KMLAssemblyOpenSearchEngineExtension : OpenSearchEngineExtension<KmlOpenSearchResultCollection> {
 
         public const string KmlMimeType = "application/vnd.google-earth.kml+xml";
                                           
@@ -94,9 +67,9 @@ namespace Terradue.OpenSearch.Kml.Extensions {
         #endregion
 
         public override IOpenSearchResultCollection CreateOpenSearchResultFromOpenSearchResult(IOpenSearchResultCollection results) {
-            if (results is KmlOpenSearchResult) return results;
+            if (results is KmlOpenSearchResultCollection) return results;
 
-            KmlOpenSearchResult kml = KmlOpenSearchResult.CreateFromOpenSearchResultCollection(results);
+            KmlOpenSearchResultCollection kml = KmlOpenSearchResultCollection.CreateFromOpenSearchResultCollection(results);
 
             return kml;
 
