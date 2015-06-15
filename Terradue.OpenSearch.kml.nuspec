@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Terradue.OpenSearch.Kml</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <title>Terradue.OpenSearch.Kml</title>
     <authors>Terradue</authors>
     <projectUrl>https://github.com/Terradue/DotNetOpenSearchKml</projectUrl>
@@ -11,7 +11,7 @@
     <description>Terradue.OpenSearch.Kml is a library targeting .NET 4.0 and above that provides an extension to Terradue.OpenSearch to query from a class or an URL from/to KML format</description>
     <summary>KML OpenSearch extension library for .Net</summary>
     <dependencies>
-      <dependency id="Terradue.OpenSearch" version="[1.9, 1.10)" />
+      <dependency id="Terradue.OpenSearch" version="[1.9, 1.11)" />
       <dependency id="SharpKml.Kmz" version="[2.0, 2.1)" />
       <dependency id="Terradue.GeoJson" version="[1.4.13, 1.5)" />
     </dependencies>
