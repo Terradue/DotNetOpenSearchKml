@@ -249,6 +249,11 @@ namespace Terradue.OpenSearch.Kml.Result {
 
             kmlResult.Kml.Feature = doc;
 
+            kmlResult.Duration = results.Duration;
+            kmlResult.OpenSearchable = results.OpenSearchable;
+            kmlResult.Parameters = results.Parameters;
+            kmlResult.TotalResults = results.TotalResults;
+
             return kmlResult;
         }
 
