@@ -34,6 +34,7 @@ using System.Collections.ObjectModel;
 using System.Xml.Linq;
 using Terradue.GeoJson.Geometry;
 using Terradue.GeoJson;
+using System.Collections.Specialized;
 
 namespace Terradue.OpenSearch.Kml.Result {
     public class KmlOpenSearchResultCollection : IOpenSearchResultCollection {
@@ -114,7 +115,7 @@ namespace Terradue.OpenSearch.Kml.Result {
             }
         }
 
-        public long TotalResults { get; protected set; }
+        public long TotalResults { get; set; }
 
         readonly System.Collections.ObjectModel.Collection<SyndicationPerson> contributors;
 
@@ -130,6 +131,36 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         public string Generator { get; set; }
+
+        IOpenSearchable openSearchable;
+        public IOpenSearchable OpenSearchable {
+            get {
+                return openSearchable;
+            }
+            set {
+                openSearchable = value;
+            }
+        }
+
+        NameValueCollection parameters;
+        public NameValueCollection Parameters {
+            get {
+                return parameters;
+            }
+            set {
+                parameters = value;
+            }
+        }
+
+        System.TimeSpan duration;
+        public System.TimeSpan Duration {
+            get {
+                return duration;
+            }
+            set {
+                duration = value;
+            }
+        }
 
         #endregion
 
