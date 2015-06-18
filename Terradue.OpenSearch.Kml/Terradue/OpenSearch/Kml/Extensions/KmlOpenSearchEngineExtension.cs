@@ -73,8 +73,6 @@ namespace Terradue.OpenSearch.Kml.Extensions {
 
             return kml;
 
-
-			
         }
 
     }
