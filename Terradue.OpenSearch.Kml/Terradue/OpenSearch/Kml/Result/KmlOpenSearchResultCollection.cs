@@ -180,7 +180,8 @@ namespace Terradue.OpenSearch.Kml.Result {
             SharpKml.Dom.Data queryTime = new SharpKml.Dom.Data();
             queryTime.Name = "queryTime";
             queryTime.DisplayName = "queryTime";
-            queryTime.Value = results.ElementExtensions.ReadElementExtensions<string>("queryTime", "http://a9.com/-/spec/opensearch/1.1/")[0];
+            Collection<string> queryTimeArray = results.ElementExtensions.ReadElementExtensions<string>("queryTime", "http://purl.org/dc/elements/1.1/");
+            if (queryTimeArray.Count != 0) queryTime.Value = queryTimeArray[0];
 
             doc.ExtendedData = new ExtendedData();
             doc.ExtendedData.AddData(queryTime);
