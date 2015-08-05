@@ -48,6 +48,10 @@ namespace Terradue.OpenSearch.Kml.Result {
             kml = new SharpKml.Dom.Kml();
         }
 
+        public KmlOpenSearchResultCollection(KmlOpenSearchResultCollection src) : base(src) {
+            kml = new SharpKml.Dom.Kml();
+        }
+
         public SharpKml.Dom.Kml Kml {
             get {
                 return kml;
@@ -153,13 +157,17 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         System.TimeSpan duration;
-        public System.TimeSpan Duration {
+        public System.TimeSpan QueryTimeSpan {
             get {
                 return duration;
             }
             set {
                 duration = value;
             }
+        }
+
+        public object Clone() {
+            return new KmlOpenSearchResultCollection(this);
         }
 
         #endregion
@@ -246,11 +254,11 @@ namespace Terradue.OpenSearch.Kml.Result {
             kmlResult.Date = results.Date;
             kmlResult.Identifier = results.Identifier;
             kmlResult.Count = results.Count;
-            kmlResult.ShowNamespaces = results.ShowNamespaces;
+//            kmlResult.ShowNamespaces = results.ShowNamespaces;
 
             kmlResult.Kml.Feature = doc;
 
-            kmlResult.Duration = results.Duration;
+            kmlResult.QueryTimeSpan = results.QueryTimeSpan;
             kmlResult.OpenSearchable = results.OpenSearchable;
             kmlResult.Parameters = results.Parameters;
             kmlResult.TotalResults = results.TotalResults;
