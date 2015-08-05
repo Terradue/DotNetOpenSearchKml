@@ -48,9 +48,6 @@ namespace Terradue.OpenSearch.Kml.Result {
             kml = new SharpKml.Dom.Kml();
         }
 
-        public KmlOpenSearchResultCollection(KmlOpenSearchResultCollection src) : base(src) {
-            kml = new SharpKml.Dom.Kml();
-        }
 
         public SharpKml.Dom.Kml Kml {
             get {
@@ -167,7 +164,7 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         public object Clone() {
-            return new KmlOpenSearchResultCollection(this);
+            return CreateFromOpenSearchResultCollection(this);
         }
 
         #endregion
