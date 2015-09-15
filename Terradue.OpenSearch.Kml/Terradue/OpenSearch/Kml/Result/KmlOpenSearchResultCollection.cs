@@ -86,7 +86,7 @@ namespace Terradue.OpenSearch.Kml.Result {
 
         public TextSyndicationContent Title { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime LastUpdatedTime { get; set; }
 
         public string Identifier { get; set; }
 
@@ -248,7 +248,7 @@ namespace Terradue.OpenSearch.Kml.Result {
             kmlResult.Links = results.Links;
             kmlResult.ElementExtensions = results.ElementExtensions;
             kmlResult.Title = results.Title;
-            kmlResult.Date = results.Date;
+            kmlResult.LastUpdatedTime = results.LastUpdatedTime;
             kmlResult.Identifier = results.Identifier;
             kmlResult.Count = results.Count;
 //            kmlResult.ShowNamespaces = results.ShowNamespaces;
