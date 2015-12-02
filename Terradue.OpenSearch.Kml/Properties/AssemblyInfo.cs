@@ -23,6 +23,26 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+
+/*!
+
+\namespace Terradue.OpenSearch.Kml
+@{
+    Terradue.OpenSearch.Kml Software Package
+
+    \xrefitem sw_version "Versions" "Software Package Version" 1.2.0
+
+    \xrefitem sw_link "Links" "Software Package List" [DotNetOpenSearchKml](https://github.com/Terradue/DotNetOpenSearchKml)
+
+    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE.txt)
+
+    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
+
+    \ingroup OpenSearch
+@}
+
+*/
+
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
