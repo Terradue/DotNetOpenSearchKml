@@ -27,6 +27,25 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 using NuGet4Mono.Extensions;
 
+/*!
+
+\namespace Terradue.OpenSearch.kml
+@{
+    Terradue.OpenSearch.Kml is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for KML format
+
+    \xrefitem sw_version "Versions" "Software Package Version" 1.2.0
+
+    \xrefitem sw_link "Link" "Software Package Link" [DotNetOpenSearchKml](https://github.com/Terradue/DotNetOpenSearchKml)
+
+    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/DotNetOpenSearch/Terradue.OpenSearch.Kml/blob/master/LICENSE.txt)
+
+    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
+
+    \ingroup OpenSearch
+@}
+
+*/
+
 [assembly: AssemblyTitle("Terradue.OpenSearch.Kml")]
 [assembly: AssemblyDescription("Terradue.OpenSearch.Kml is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for KML format")]
 [assembly: AssemblyConfiguration("")]
@@ -38,8 +57,8 @@ using NuGet4Mono.Extensions;
 [assembly: AssemblyAuthors("Emmanuel Mathot")]
 [assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchKml")]
 [assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchKml/blob/master/LICENSE")]
-[assembly: AssemblyVersion("1.1.4.*")]
-[assembly: AssemblyInformationalVersion("1.1.4")]
+[assembly: AssemblyVersion("1.2.0.*")]
+[assembly: AssemblyInformationalVersion("1.2")]
 
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
