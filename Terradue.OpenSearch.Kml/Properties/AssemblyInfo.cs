@@ -25,6 +25,7 @@ using System.Runtime.CompilerServices;
 
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
+using NuGet4Mono.Extensions;
 
 [assembly: AssemblyTitle("Terradue.OpenSearch.Kml")]
 [assembly: AssemblyDescription("")]
@@ -34,11 +35,9 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCopyright("Terradue")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-// The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
-// The form "{Major}.{Minor}.*" will automatically update the build and revision,
-// and "{Major}.{Minor}.{Build}.*" will update just the revision.
-
+[assembly: AssemblyAuthors("Emmanuel Mathot")]
+[assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchKml")]
+[assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchKml/blob/master/LICENSE")]
 [assembly: AssemblyVersion("1.1.4.*")]
 [assembly: AssemblyInformationalVersion("1.1.4")]
 
