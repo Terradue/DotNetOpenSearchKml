@@ -28,7 +28,7 @@ using System.Runtime.CompilerServices;
 using NuGet4Mono.Extensions;
 
 [assembly: AssemblyTitle("Terradue.OpenSearch.Kml")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Terradue.OpenSearch.Kml is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for KML format")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Terradue")]
 [assembly: AssemblyProduct("")]
