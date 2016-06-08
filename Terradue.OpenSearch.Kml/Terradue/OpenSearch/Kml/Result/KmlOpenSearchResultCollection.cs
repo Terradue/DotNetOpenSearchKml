@@ -86,7 +86,7 @@ namespace Terradue.OpenSearch.Kml.Result {
 
         public TextSyndicationContent Title { get; set; }
 
-        public DateTime LastUpdatedTime { get; set; }
+        public DateTimeOffset LastUpdatedTime { get; set; }
 
         public string Identifier { get; set; }
 
@@ -134,6 +134,7 @@ namespace Terradue.OpenSearch.Kml.Result {
         public string Generator { get; set; }
 
         IOpenSearchable openSearchable;
+
         public IOpenSearchable OpenSearchable {
             get {
                 return openSearchable;
@@ -144,6 +145,7 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         NameValueCollection parameters;
+
         public NameValueCollection Parameters {
             get {
                 return parameters;
@@ -154,6 +156,7 @@ namespace Terradue.OpenSearch.Kml.Result {
         }
 
         System.TimeSpan duration;
+
         public System.TimeSpan QueryTimeSpan {
             get {
                 return duration;
@@ -173,8 +176,10 @@ namespace Terradue.OpenSearch.Kml.Result {
             Document doc = new Document();
 
             //find who call the search, shop cart or search response
-            if (results.Title != null) doc.Name = results.Title.Text;
-            else doc.Name = results.Identifier;
+            if (results.Title != null)
+                doc.Name = results.Title.Text;
+            else
+                doc.Name = results.Identifier;
 
             if (results.Description != null) {
                 Description description = new Description();
@@ -186,7 +191,8 @@ namespace Terradue.OpenSearch.Kml.Result {
             queryTime.Name = "queryTime";
             queryTime.DisplayName = "queryTime";
             Collection<string> queryTimeArray = results.ElementExtensions.ReadElementExtensions<string>("queryTime", "http://purl.org/dc/elements/1.1/");
-            if (queryTimeArray.Count != 0) queryTime.Value = queryTimeArray[0];
+            if (queryTimeArray.Count != 0)
+                queryTime.Value = queryTimeArray[0];
 
             doc.ExtendedData = new ExtendedData();
             doc.ExtendedData.AddData(queryTime);
@@ -212,28 +218,19 @@ namespace Terradue.OpenSearch.Kml.Result {
                 style.Line = line;
 
                 Placemark placeMark = new Placemark();
-                if (item.Title != null) placeMark.Name = item.Title.Text;
-                else placeMark.Name = item.Identifier;
+                if (item.Title != null)
+                    placeMark.Name = item.Title.Text;
+                else
+                    placeMark.Name = item.Identifier;
                 placeMark.StyleUrl = new Uri("#ngEO-balloon-style", UriKind.Relative);
 
                 // retrive the single earthObservation node information
                 ExtendedData eData = new ExtendedData();
 
                 // building the footprint
-                XmlDocument coordinatesDoc = new XmlDocument();
-                Dictionary<string, string> result = new Dictionary<string, string>();
-
-                foreach (SyndicationElementExtension ext in item.ElementExtensions) {
-
-                    XElement element = XElement.Load(ext.GetReader());
-                    XElementToExtendedData(element, ext.OuterName, ref eData);
-
-                    if (ext.OuterNamespace == GEORSS || ext.OuterNamespace == GEORSS10) {
-                        var xml = ext.GetObject<XmlElement>();
-                        var geometry = GeometryFactory.GeoRSSToGeometry(xml);
-                        if (geometry != null) placeMark.Geometry = KMLGeometry(geometry);
-                    }
-                }
+                var geometry = Terradue.Metadata.EarthObservation.OpenSearch.EarthObservationOpenSearchResultHelpers.FindGeometry(item);
+                if (geometry != null)
+                    placeMark.Geometry = KMLGeometry(geometry);
 
                 // assigning values to the placemark
                 placeMark.AddStyle(style);
@@ -277,8 +274,10 @@ namespace Terradue.OpenSearch.Kml.Result {
             }
 
             foreach (var attr in element.Attributes()) {
-                if (attr.IsNamespaceDeclaration) continue;
-                if (attr.Name.LocalName == "nil") continue;
+                if (attr.IsNamespaceDeclaration)
+                    continue;
+                if (attr.Name.LocalName == "nil")
+                    continue;
                 Data data = new Data();
                 data.Name = key + "." + attr.Name.LocalName;
                 data.Value = attr.Value;
@@ -401,7 +400,8 @@ namespace Terradue.OpenSearch.Kml.Result {
 
             if (positions.Length > 0 && positions[0] is GeographicPosition) {
                 CoordinateCollection kmlCoordinates = new CoordinateCollection();
-                foreach (var position in positions) kmlCoordinates.Add(KmlVector(position));
+                foreach (var position in positions)
+                    kmlCoordinates.Add(KmlVector(position));
                 return kmlCoordinates;
             }
             return null;

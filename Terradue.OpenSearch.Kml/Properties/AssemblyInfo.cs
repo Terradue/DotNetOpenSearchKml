@@ -23,44 +23,23 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-
-/*!
-
-\namespace Terradue.OpenSearch.Kml
-@{
-    Terradue.OpenSearch.Kml Software Package
-
-    \xrefitem sw_version "Versions" "Software Package Version" 1.2.0
-
-    \xrefitem sw_link "Links" "Software Package List" [DotNetOpenSearchKml](https://github.com/Terradue/DotNetOpenSearchKml)
-
-    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/Terradue/DotNetOpenSearchGeoJson/blob/master/LICENSE.txt)
-
-    \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
-
-    \ingroup OpenSearch
-@}
-
-*/
-
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
+using NuGet4Mono.Extensions;
 
 [assembly: AssemblyTitle("Terradue.OpenSearch.Kml")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Terradue.OpenSearch.Kml is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for KML format")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Terradue")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("Terradue")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-// The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
-// The form "{Major}.{Minor}.*" will automatically update the build and revision,
-// and "{Major}.{Minor}.{Build}.*" will update just the revision.
-
-[assembly: AssemblyVersion("1.2.0.*")]
-[assembly: AssemblyInformationalVersion("1.2.0")]
+[assembly: AssemblyAuthors("Emmanuel Mathot")]
+[assembly: AssemblyProjectUrl("https://github.com/Terradue/DotNetOpenSearchKml")]
+[assembly: AssemblyLicenseUrl("https://github.com/Terradue/DotNetOpenSearchKml/blob/master/LICENSE")]
+[assembly: AssemblyVersion("1.2.*")]
+[assembly: AssemblyInformationalVersion("1.2")]
 
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
