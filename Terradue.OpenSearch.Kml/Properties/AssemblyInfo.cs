@@ -29,7 +29,7 @@ using NuGet4Mono.Extensions;
 
 /*!
 
-\namespace Terradue.OpenSearch.kml
+\namespace Terradue.OpenSearch.Kml
 @{
     Terradue.OpenSearch.Kml is a plugin for Terradue.OpenSearch library targeting .NET 4.0 and above that provides an easy way to perform OpenSearch query for KML format
 
@@ -37,7 +37,7 @@ using NuGet4Mono.Extensions;
 
     \xrefitem sw_link "Link" "Software Package Link" [DotNetOpenSearchKml](https://github.com/Terradue/DotNetOpenSearchKml)
 
-    \xrefitem sw_license "License" "Software License" [GPLv3](https://github.com/DotNetOpenSearch/Terradue.OpenSearch.Kml/blob/master/LICENSE.txt)
+    \xrefitem sw_license "License" "Software License" [AGPL](https://github.com/DotNetOpenSearch/Terradue.OpenSearch.Kml/blob/master/LICENSE)
 
     \xrefitem sw_req "Require" "Software Dependencies" \ref Terradue.OpenSearch
 
